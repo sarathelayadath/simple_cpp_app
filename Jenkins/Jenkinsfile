@@ -1,1 +1,47 @@
+pipeline {  
+    environment {
+        // Define environment variables as needed
+        REPO_URL = 'https://github.com/sarathelayadath/simple_cpp_app.git'
+    }
+  
+    stages {        
+        stage("Clean Up") { // Deletes previous build directories. Good practice at the begining of job
+            steps {
+                dir("${WORKSPACE}"){
+                      sh """
+                      ls
+                      rm -rf simple_cpp_app*
+                      """
+                }
+            }
+        }
 
+       stage('Clone Repository') {
+            steps {
+                // Checkout the code from the repository
+                sh "git clone ${REPO_URL}"
+            }
+        }
+
+        stage('build') {
+            steps {
+                echo "Start build"
+                dir("${WORKSPACE}") {
+                    sh """
+                    ls
+                    """
+                }
+            }
+        }
+      
+   }
+
+    post {
+        success {
+            echo 'Pipeline successful!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
