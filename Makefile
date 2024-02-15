@@ -3,7 +3,7 @@ CFLAGS = -Wall
 LDFLAGS = -static-libgcc -ldl
 
 TARGET = file_exists
-SOURCES = main.cpp
+SOURCES = file_exists.c
 OBJECTS = $(SOURCES:.c=.o)
 
 all: $(TARGET)
