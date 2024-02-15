@@ -12,35 +12,35 @@ pipeline {
             }
         }
 
-        # stage('Clone Repository') {
-        #     steps {
-        #         // Define the repository URL
-        #         script {
-        #             def repoUrl = 'https://github.com/sarathelayadath/simple_cpp_app.git'
-        #             echo "Cloning repository from ${repoUrl}"
-        #             git branch: 'main', url: repoUrl
-        #         }
-        #     }
-        # }
+    //     stage('Clone Repository') {
+    //         steps {
+    //             // Define the repository URL
+    //             script {
+    //                 def repoUrl = 'https://github.com/sarathelayadath/simple_cpp_app.git'
+    //                 echo "Cloning repository from ${repoUrl}"
+    //                 git branch: 'main', url: repoUrl
+    //             }
+    //         }
+    //     }
 
-        # stage('Build') {
-        #     steps {
-        #         dir("${WORKSPACE}") {
-        #             sh """
-        #             echo "Start building"
-        #             make
-        #             """
-        #         }
-        #     }
-        # }
+    //     stage('Build') {
+    //         steps {
+    //             dir("${WORKSPACE}") {
+    //                 sh """
+    //                 echo "Start building"
+    //                 make
+    //                 """
+    //             }
+    //         }
+    //     }
 
-        # stage('Test') {
-        #     steps {
-        #         dir("${WORKSPACE}") {
-        #             sh "./file_exists"
-        #         }
-        #     }
-        # }
+    //     stage('Test') {
+    //         steps {
+    //             dir("${WORKSPACE}") {
+    //                 sh "./file_exists"
+    //             }
+    //         }
+    //     }
     }
 
     post {
