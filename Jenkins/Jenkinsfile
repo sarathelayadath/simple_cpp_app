@@ -14,6 +14,16 @@ pipeline {
         }
 
         // Add more stages for building, testing, etc., as needed
+	stage('Build') {
+		steps {
+			dir("${WORKSPACE}") {
+				sh """
+				mkdir build
+				make
+				"""
+			}
+		}
+	}
     }
 
     post {

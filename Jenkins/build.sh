@@ -1,2 +1,3 @@
-#!/bin/bash
+#!/bin/bashi
 
+blddir=`pwd`
