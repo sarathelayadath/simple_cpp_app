@@ -1,3 +1,0 @@
-#!/bin/bashi
-
-blddir=`pwd`
