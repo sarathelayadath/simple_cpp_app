@@ -8,7 +8,7 @@ pipeline {
                 sh """
                 rm -rf simple_cpp_app*
                 """
-        }
+                }
             }
         }
 
@@ -40,7 +40,7 @@ pipeline {
         #             sh "./file_exists"
         #         }
         #     }
-        }
+        # }
     }
 
     post {
