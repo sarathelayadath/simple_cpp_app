@@ -2,6 +2,16 @@ pipeline {
     agent any
 
     stages {
+        stage("Clean Up") { // Deletes previous build directories. Good practice at the begining of job
+            steps {
+                dir("${WORKSPACE}"){
+                sh """
+                rm -rf simple_cpp_app*
+                """
+        }
+            }
+        }
+
         stage('Clone Repository') {
             steps {
                 // Define the repository URL
@@ -13,17 +23,24 @@ pipeline {
             }
         }
 
-        // Add more stages for building, testing, etc., as needed
-	stage('Build') {
-		steps {
-			dir("${WORKSPACE}") {
-				sh """
-	                        echo "Start building"	
-				make
-				"""
-			}
-		}
-	}
+        stage('Build') {
+            steps {
+                dir("${WORKSPACE}") {
+                    sh """
+                    echo "Start building"
+                    make
+                    """
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir("${WORKSPACE}") {
+                    sh "./file_exists"
+                }
+            }
+        }
     }
 
     post {
