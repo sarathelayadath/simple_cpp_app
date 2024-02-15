@@ -18,7 +18,7 @@ pipeline {
 		steps {
 			dir("${WORKSPACE}") {
 				sh """
-				mkdir build
+	                        echo "Start building"	
 				make
 				"""
 			}
